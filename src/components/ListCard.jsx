@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 
-export const Card = ({ movie }) => {
+export const ListCard = ({ movie }) => {
     const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
     let storedMovie = watchlist.find(obj => obj.id === movie.id);
