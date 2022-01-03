@@ -7,18 +7,22 @@ import { Add } from './components/Add';
 import './App.css';
 import './lib/font-awesome/css/all.min.css';
 
+import { GlobalProvider } from './context/GlobalState';
+
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Watchlist />} />
-          <Route path='/watched' element={<Watched />} />
-          <Route path='/add' element={<Add />} />
-          {/* <Route path='/movie-detail/:id' element={<Detail />} /> */}
-        </Routes>
-      </BrowserRouter>
+      <GlobalProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path='/' element={<Watchlist />} />
+            <Route path='/watched' element={<Watched />} />
+            <Route path='/add' element={<Add />} />
+            {/* <Route path='/movie-detail/:id' element={<Detail />} /> */}
+          </Routes>
+        </BrowserRouter>
+      </GlobalProvider>
     </div>
   );
 }

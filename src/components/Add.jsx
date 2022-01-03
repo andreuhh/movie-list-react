@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Card } from './Card';
 
 export const Add = () => {
     const [query, setQuery] = useState('');
@@ -39,7 +40,7 @@ export const Add = () => {
                         <ul className="results">
                             {results.map((movie) => (
                                 <li key={movie.id}>
-                                    {movie.title}
+                                    <Card movie={movie} />
                                 </li>
                             ))}
                         </ul>
