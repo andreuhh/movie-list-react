@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { SingleCardControls } from './SingleCardControls';
 
 export const SingleCard = ({ movie, type }) => {
     return (
@@ -10,7 +11,7 @@ export const SingleCard = ({ movie, type }) => {
                 alt={`${movie.title} Poster`}
             />
 
-
+            <SingleCardControls type={type} movie={movie} />
         </div>
     )
 }
