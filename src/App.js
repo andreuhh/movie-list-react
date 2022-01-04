@@ -5,6 +5,7 @@ import { Home } from './components/Home';
 import { Watchlist } from './components/Watchlist';
 import { Watched } from './components/Watched';
 import { Add } from './components/Add';
+import { Detail } from './components/Detail/Detail';
 import './App.css';
 import './lib/font-awesome/css/all.min.css';
 
@@ -21,7 +22,7 @@ function App() {
             <Route path='/watchlist' element={<Watchlist />} />
             <Route path='/watched' element={<Watched />} />
             <Route path='/add' element={<Add />} />
-            {/* <Route path='/movie-detail/:id' element={<Detail />} /> */}
+            <Route path='/movie-detail/:id' element={<Detail />} />
           </Routes>
         </BrowserRouter>
       </GlobalProvider>

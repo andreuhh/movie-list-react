@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,600&display=swap');
 
 :root {
   --primary: #141414;
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -42,6 +42,11 @@ body {
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+a {
+  color: #141414;
+  text-decoration: none;
 }
 
 .btn {
@@ -183,7 +188,7 @@ header .nav-links li:last-child {
 }
 
 .result-card .info .average i {
-  color: yellow;
+  color: rgba(221, 221, 17, 0.829);
 }
 
 .result-card .info .average {
@@ -229,7 +234,7 @@ header .nav-links li:last-child {
 
 @media (min-width: 992px) {
   .movie-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -277,6 +282,10 @@ header .nav-links li:last-child {
 
 .movie-card:hover .inner-card-controls {
   opacity: 1;
+}
+
+.movie-data h3 {
+  margin-bottom: 0;
 }
 
 .ctrl-btn {
