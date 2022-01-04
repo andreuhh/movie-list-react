@@ -19,7 +19,7 @@ export const SectionUncoming = () => {
                     {data && data.results.map((movie, i) => {
                         if (i < 8) {
                             return (
-                                <SingleCard key={movie.id} movie={movie} type='watchlist' />
+                                <SingleCard key={movie.id} movie={movie} isHome={true} type='watchlist' />
                             )
                         }
                     })}

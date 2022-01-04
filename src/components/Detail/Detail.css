@@ -1,0 +1,28 @@
+.container-detail {
+    display: flex;
+    align-items: flex-start;
+}
+
+.container-detail h1 {
+    margin-bottom: 0px;
+}
+
+.container-detail h3 {
+    font-weight: 200;
+}
+
+.container-detail img {
+    min-width: 330px;
+}
+
+.infoContainer {
+    padding-left: 30px;
+}
+
+.infoContainer p {
+    color: #585454;
+}
+
+.container-detail .btn:last-of-type {
+    margin-left: 15px;
+}

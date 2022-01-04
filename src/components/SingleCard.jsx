@@ -30,7 +30,7 @@ export const SingleCard = ({ movie, type, isHome }) => {
             </div>
             <Link to={`/movie-detail/${movie.id}`}>
                 <div className='movie-data'>
-                    <h3>{movie.title}</h3>
+                    <h3 className='textOneLine'>{movie.title}</h3>
                 </div>
             </Link>
 
