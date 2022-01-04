@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
 
 :root {
-  --primary: #032541;
-  --secondary: #21d07a;
+  --primary: #141414;
+  --secondary: #E50914;
   --white: #fff;
+  --gray: #564d4d;
 }
 
 body {
@@ -46,7 +47,7 @@ body {
 .btn {
   padding: 10px 15px;
   background-color: var(--secondary);
-  color: var(--primary);
+  color: var(--white);
   border-radius: 5px;
   text-transform: uppercase;
   font-weight: 700;
@@ -58,7 +59,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #1aa762;
+  background-color: #ca0812;
   opacity: 1;
   cursor: pointer;
 }
@@ -173,11 +174,20 @@ header .nav-links li:last-child {
   margin: 0;
 }
 
-.result-card .info .release-date {
+.result-card .info .release-date,
+.result-card .info .average {
   font-size: 1.25rem;
   font-weight: 300;
   color: var(--primary);
   margin: 0;
+}
+
+.result-card .info .average i {
+  color: yellow;
+}
+
+.result-card .info .average {
+  margin: 10px 0;
 }
 
 .result-card .controls button {
@@ -203,7 +213,7 @@ header .nav-links li:last-child {
   font-size: 1.125rem;
   font-weight: 600;
   border-radius: 999px;
-  color: var(--primary);
+  color: var(--white);
 }
 
 .movie-page .heading {

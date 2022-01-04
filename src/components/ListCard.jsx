@@ -28,7 +28,8 @@ export const ListCard = ({ movie }) => {
             <div className="info">
                 <div className="header">
                     <h3 className="title">{movie.title}</h3>
-                    <h4 className="release-date">{movie.release_date.substring(0, 4)}</h4>
+                    <h4 className="release-date">{movie?.release_date?.substring(0, 4)}</h4>
+                    <h4 className="average"><i class="fas fa-star"></i> {movie.vote_average}</h4>
                 </div>
 
                 <div className="controls">
