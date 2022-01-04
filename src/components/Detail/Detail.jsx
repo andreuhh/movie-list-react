@@ -41,7 +41,7 @@ export const Detail = () => {
                             <p>{movie.overview}</p>
 
                             <p>
-                                Budget {movie.budget} $
+                                Budget : {movie.budget}$
                             </p>
 
                             <div className="controls">

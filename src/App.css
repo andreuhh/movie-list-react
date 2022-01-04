@@ -100,7 +100,7 @@ header .inner-content {
 
 header a {
   color: var(--white);
-  font-size: 1.25rem;
+  font-size: 0.9rem;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -111,7 +111,7 @@ header a:hover {
 
 header .brand a {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 header .nav-links {
@@ -124,11 +124,25 @@ header .nav-links {
 
 header .nav-links li {
   display: inline-block;
-  margin-right: 30px;
+  margin-right: 10px;
 }
 
 header .nav-links li:last-child {
   margin-right: 0;
+}
+
+@media (min-width: 500px) {
+  header a {
+    font-size: 1.25rem;
+  }
+
+  header .nav-links li {
+    margin-right: 30px;
+  }
+
+  header .brand a {
+    font-size: 1.5rem;
+  }
 }
 
 /* Add Page */
@@ -187,16 +201,18 @@ header .nav-links li:last-child {
   margin: 0;
 }
 
-.result-card .info .release-date,
+.result-card .info .release-date {
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #585454;
+  margin: 0;
+}
+
 .result-card .info .average {
   font-size: 1.25rem;
   font-weight: 300;
   color: var(--primary);
   margin: 0;
-}
-
-.result-card .info .average i {
-  color: rgba(221, 221, 17, 0.829);
 }
 
 .result-card .info .average {
@@ -236,8 +252,20 @@ header .nav-links li:last-child {
 
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 30px;
+}
+
+@media (min-width: 500px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 992px) {
@@ -276,7 +304,7 @@ header .nav-links li:last-child {
 
 .movie-card .inner-card-controls {
   display: inline;
-  background-color: red;
+  background-color: var(--secondary);
   position: absolute;
   bottom: 20px;
   left: 50%;

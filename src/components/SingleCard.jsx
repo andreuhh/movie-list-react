@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { SingleCardControls } from './SingleCardControls';
 import { GlobalContext } from '../context/GlobalState';
+import { Rating } from './Rating/Rating';
 import { Link } from 'react-router-dom';
 
 
@@ -25,6 +26,8 @@ export const SingleCard = ({ movie, type, isHome }) => {
                     src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                     alt={`${movie.title} Poster`}
                 />
+
+                <Rating rating={movie.vote_average} />
 
                 <SingleCardControls type={type} movie={movie} />
             </div>

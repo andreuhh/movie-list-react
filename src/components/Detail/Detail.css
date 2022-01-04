@@ -26,3 +26,13 @@
 .container-detail .btn:last-of-type {
     margin-left: 15px;
 }
+
+@media (max-width: 768px) {
+    .container-detail {
+        display: block;
+    }
+
+    .infoContainer {
+        padding-left: 0;
+    }
+}

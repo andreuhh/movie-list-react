@@ -17,7 +17,7 @@ export const SectionUncoming = () => {
                 {isPending && <Loading />}
                 <div className="movie-grid">
                     {data && data.results.map((movie, i) => {
-                        if (i < 8) {
+                        if (i < 12) {
                             return (
                                 <SingleCard key={movie.id} movie={movie} isHome={true} type='watchlist' />
                             )

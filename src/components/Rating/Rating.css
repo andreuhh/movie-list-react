@@ -1,0 +1,22 @@
+.rating {
+    z-index: 1000;
+    background-color: #141414;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 1;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 10px;
+    border: 3px solid;
+}
+
+.rating.rating-add {
+    position: unset;
+    margin-bottom: 10px;
+}

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
 
 export const ListCard = ({ movie }) => {
@@ -19,17 +20,23 @@ export const ListCard = ({ movie }) => {
         <div className='result-card'>
             <div className="poster-wrapper">
                 {movie.poster_path ? (
-                    <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={`${movie.title} Poster`} />
+                    <Link to={`/movie-detail/${movie.id}`}>
+                        <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={`${movie.title} Poster`} />
+                    </Link>
                 ) : (
-                    <div className='filler-poster'></div>
+                    <Link to={`/movie-detail/${movie.id}`}>
+                        <div className='filler-poster'></div>
+                    </Link>
                 )}
             </div>
 
             <div className="info">
                 <div className="header">
-                    <h3 className="title">{movie.title}</h3>
-                    <h4 className="release-date">{movie?.release_date?.substring(0, 4)}</h4>
-                    <h4 className="average"><i className="fas fa-star"></i> {movie.vote_average}</h4>
+                    <Link to={`/movie-detail/${movie.id}`}>
+                        <h3 className="title">{movie.title}</h3>
+                    </Link>
+                    <p className="release-date">{movie?.release_date?.substring(0, 4)}</p>
+                    <div className="rating rating-add" style={{ borderColor: movie.vote_average > 8 ? "green" : movie.vote_average > 6 ? "orange" : "red", }}>{movie.vote_average}</div>
                 </div>
 
                 <div className="controls">
