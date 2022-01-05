@@ -8,12 +8,14 @@ import { Add } from './components/Add';
 import { Detail } from './components/Detail/Detail';
 import './App.css';
 import './lib/font-awesome/css/all.min.css';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { GlobalProvider } from './context/GlobalState';
 
 function App() {
   return (
     <div className="App">
+    <AnimatePresence exitBeforeEnter >
       <GlobalProvider>
         <BrowserRouter>
           <Header />
@@ -26,6 +28,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </GlobalProvider>
+    </AnimatePresence>
     </div>
   );
 }

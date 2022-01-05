@@ -3,6 +3,7 @@ import { SingleCard } from './SingleCard';
 import Loading from '../components/Loading/Loading';
 import { useFetch } from '../hooks/useFetch';
 
+
 export const SectionMostPopular = () => {
     const { data, isPending, error } = useFetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`)
 

@@ -4,6 +4,7 @@ import Loading from '../Loading/Loading';
 import { useFetch } from '../../hooks/useFetch';
 import { GlobalContext } from '../../context/GlobalState';
 import { SectionSimilarMovie } from '../SectionSimilarMovie';
+import { AnimatePresence, motion } from 'framer-motion';
 import './Detail.css';
 
 export const Detail = () => {
@@ -28,48 +29,56 @@ export const Detail = () => {
     const watchedDisabled = storedMovieWatched ? true : false;
 
     return (
-        <div className='movie-page'>
-            <div className="container container-detail">
-                {error && <p className="error">{error}</p>}
-                {isPending && <Loading />}
-                {movie && (
-                    <>
-                        <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={`${movie.title} Poster`} />
-                        <div className='infoContainer'>
-                            <h1>{movie.title}</h1>
-                            <h3>{movie.tagline}</h3>
-                            <h5>{movie.release_date}</h5>
-                            <p>{movie.overview}</p>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+        >
 
-                            <p>
-                                Budget : {movie.budget}$
-                            </p>
+            <div className='movie-page'>
+                <div className="container container-detail">
+                    {error && <p className="error">{error}</p>}
+                    {isPending && <Loading />}
+                    {movie && (
+                        <>
+                            <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={`${movie.title} Poster`} />
+                            <div className='infoContainer'>
+                                <h1>{movie.title}</h1>
+                                <h3>{movie.tagline}</h3>
+                                <h5>{movie.release_date}</h5>
+                                <p>{movie.overview}</p>
 
-                            <div className="controls">
-                                <button
-                                    className="btn"
-                                    disabled={watchlistDisabled}
-                                    onClick={() => addMovieToWatchlist(movie)}
-                                >Add to Watchlist
-                                </button>
+                                <p>
+                                    Budget : {movie.budget}$
+                                </p>
 
-                                <button
-                                    className="btn"
-                                    disabled={watchedDisabled}
-                                    onClick={() => addMovieToWatched(movie)}
-                                >Add to Watched
-                                </button>
+                                <div className="controls">
+                                    <button
+                                        className="btn"
+                                        disabled={watchlistDisabled}
+                                        onClick={() => addMovieToWatchlist(movie)}
+                                    >Add to Watchlist
+                                    </button>
+
+                                    <button
+                                        className="btn"
+                                        disabled={watchedDisabled}
+                                        onClick={() => addMovieToWatched(movie)}
+                                    >Add to Watched
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </>
+                        </>
+                    )}
+                </div>
+
+                {movie && (
+                    <SectionSimilarMovie id={movie.id} />
                 )}
+
             </div>
-
-            {movie && (
-                <SectionSimilarMovie id={movie.id} />
-            )}
-
-        </div>
+        </motion.div>
 
     )
 }
