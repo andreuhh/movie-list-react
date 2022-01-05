@@ -46,6 +46,12 @@ export const Add = () => {
                         </ul>
                     )}
 
+                    {results?.length === 0 && (
+                        <ul className="results">
+                            <li>No results for your search...</li>
+                        </ul>
+                    )}
+
                 </div>
             </div>
         </div>

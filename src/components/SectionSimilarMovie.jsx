@@ -1,30 +1,30 @@
 import React from 'react';
 import { SingleCard } from './SingleCard';
-import Loading from '../components/Loading/Loading';
+import Loading from './Loading/Loading';
 import { useFetch } from '../hooks/useFetch';
 
-export const SectionMostPopular = () => {
-    const { data, isPending, error } = useFetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`)
+export const SectionSimilarMovie = ({ id }) => {
+    const { data, isPending, error } = useFetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`)
+    console.log('relatives', data);
 
     return (
         <div className='movie-page'>
             <div className="container">
                 <div className="header">
-                    <h1 className="heading">Most Popular</h1>
+                    <h2 className="heading">Similar Movies</h2>
                 </div>
 
                 {error && <p className="error">{error}</p>}
                 {isPending && <Loading />}
                 <div className="movie-grid">
                     {data && data.results.map((movie, i) => {
-                        if (i < 12) {
+                        if (i < 4) {
                             return (
                                 <SingleCard key={movie.id} movie={movie} isHome={true} />
                             )
                         }
                     })}
                 </div>
-
             </div>
         </div>
     )

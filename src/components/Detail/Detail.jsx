@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import Loading from '../Loading/Loading';
 import { useFetch } from '../../hooks/useFetch';
 import { GlobalContext } from '../../context/GlobalState';
+import { SectionSimilarMovie } from '../SectionSimilarMovie';
 import './Detail.css';
 
 export const Detail = () => {
@@ -62,8 +63,12 @@ export const Detail = () => {
                         </div>
                     </>
                 )}
-
             </div>
+
+            {movie && (
+                <SectionSimilarMovie id={movie.id} />
+            )}
+
         </div>
 
     )

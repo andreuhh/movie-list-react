@@ -19,12 +19,11 @@ export const SectionUncoming = () => {
                     {data && data.results.map((movie, i) => {
                         if (i < 12) {
                             return (
-                                <SingleCard key={movie.id} movie={movie} isHome={true} type='watchlist' />
+                                <SingleCard key={movie.id} movie={movie} isHome={true} />
                             )
                         }
                     })}
                 </div>
-
             </div>
         </div>
     )

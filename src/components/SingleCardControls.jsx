@@ -36,7 +36,6 @@ export const SingleCardControls = ({ movie, type }) => {
                     </>
                 )
             )}
-
         </div>
     )
 }
