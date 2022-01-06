@@ -5,7 +5,6 @@ import { useFetch } from '../hooks/useFetch';
 
 export const SectionSimilarMovie = ({ id }) => {
     const { data, isPending, error } = useFetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`)
-    console.log('relatives', data);
 
     return (
         <div className='movie-page'>

@@ -12,9 +12,7 @@ export const Detail = () => {
     const { id } = useParams()
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
 
-
-    const { data: movie, isPending, error } = useFetch(url)
-    console.log(movie);
+    const { data: movie, isPending, error } = useFetch(url);
 
     const { addMovieToWatchlist, addMovieToWatched, watchlist, watched } = useContext(GlobalContext);
     let storedMovie = watchlist.find(obj => obj?.id === movie?.id);

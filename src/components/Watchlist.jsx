@@ -6,8 +6,6 @@ import { motion } from 'framer-motion';
 export const Watchlist = () => {
     const { watchlist } = useContext(GlobalContext);
 
-    console.log(watchlist);
-
     return (
         <motion.div
             initial={{ opacity: 0 }}

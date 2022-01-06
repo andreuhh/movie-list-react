@@ -16,7 +16,6 @@ export const Add = () => {
             .then((data) => {
                 if (!data.error) {
                     setResults(data.results);
-                    console.log(data.results);
                 } else {
                     setResults([]);
                 }
