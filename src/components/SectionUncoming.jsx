@@ -11,7 +11,8 @@ export const SectionUncoming = () => {
 
     const animation = useAnimation();
 
-    const { ref, inView } = useInView({ threshold: 0.1 });
+    const { ref, inView } = useInView();
+    //{ threshold: 0.1 }
 
     useEffect(() => {
         //console.log(inView);
