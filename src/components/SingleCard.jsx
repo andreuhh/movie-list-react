@@ -20,16 +20,19 @@ export const SingleCard = ({ movie, type, isHome }) => {
     return (
         <div>
             <div className="movie-card">
-                <div className="overlay"></div>
+                <Link to={`/movie-detail/${movie.id}`}>
+                    <div className="overlay"></div>
+                    <img
+                        src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                        alt={`${movie.title} Poster`}
+                    />
 
-                <img
-                    src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                    alt={`${movie.title} Poster`}
-                />
+                    <Rating rating={movie.vote_average} />
+                </Link>
 
-                <Rating rating={movie.vote_average} />
-
-                <SingleCardControls type={type} movie={movie} />
+                {!isHome && (
+                    <SingleCardControls type={type} movie={movie} />
+                )}
             </div>
             <Link to={`/movie-detail/${movie.id}`}>
                 <div className='movie-data'>
