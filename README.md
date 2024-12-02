@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Simple project for creating Watch and Watched List of films. 
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
